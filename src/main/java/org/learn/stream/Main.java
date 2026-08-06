@@ -75,15 +75,21 @@ public class Main {
         Map<Employee.Department, Employee> maxSalary1 = employees.stream().collect(groupingBy(Employee::getDepartment, collectingAndThen(maxBy(Comparator.comparing(Employee::getSalary)), Optional::get)));
         printMap(maxSalary1);
 
+        Map<Boolean, List<Employee>> isActive = employees.stream().collect(partitioningBy(Employee::isActive));
+        printMap(isActive);
+
+        var isActiveByDepartment = employees.stream().collect(partitioningBy(Employee::isActive,
+                groupingBy(Employee::getDepartment)));
+        printMap(isActiveByDepartment);
+
+        Map<Boolean, Employee> collect = employees.stream().collect(partitioningBy(Employee::isActive,
+                collectingAndThen(maxBy(Comparator.comparing(Employee::getSalary)), Optional::get)));
+        printMap(collect);
+        /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+        * Collector*/
+
     }
 
-    private static void print(Stream stream){
-        stream.forEach(s ->
-        {
-            System.out.println(s);
-        });
-
-    }
     private static void printMap(Map map){
         System.out.println("____________________________________________");
         map.forEach((d,e )->{
