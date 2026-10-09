@@ -75,7 +75,8 @@ public class Main {
         Map<Employee.Department, Employee> maxSalary1 = employees.stream().collect(groupingBy(Employee::getDepartment, collectingAndThen(maxBy(Comparator.comparing(Employee::getSalary)), Optional::get)));
         printMap(maxSalary1);
 
-        Map<Boolean, List<Employee>> isActive = employees.stream().collect(partitioningBy(Employee::isActive));
+        Map<Boolean, List<Employee>> isActive = employees.stream()
+                .collect(partitioningBy(Employee::isActive));
         printMap(isActive);
 
         var isActiveByDepartment = employees.stream().collect(partitioningBy(Employee::isActive,
