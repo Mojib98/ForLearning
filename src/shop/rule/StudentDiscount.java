@@ -1,4 +1,4 @@
-package shop.model.rule;
+package shop.rule;
 
 /**
  * @author M.R Khabireh

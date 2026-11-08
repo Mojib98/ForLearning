@@ -1,4 +1,4 @@
-package shop.engin;
+package shop.engine;
 
 import shop.model.Customer;
 import shop.model.DiscountRule;

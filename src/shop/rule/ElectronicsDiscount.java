@@ -1,4 +1,4 @@
-package shop.model.rule;
+package shop.rule;
 
 import shop.model.Category;
 import shop.model.Customer;

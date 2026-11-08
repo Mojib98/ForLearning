@@ -4,7 +4,7 @@ import static java.util.stream.Collectors.*;
 
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
-void main() {
+void main4() {
     List<String> list = Arrays.asList("HELLO", "WORLD");
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
     List<Integer> squares =
@@ -170,4 +170,7 @@ void main() {
 
 
 
+}
+
+void main() {
 }
